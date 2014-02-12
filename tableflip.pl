@@ -51,6 +51,10 @@ sub private_hue {
 sub hue {
 	my ($server, $msg, $nick, $target) = @_;
 	return if ($msg !~ /^!flip$/i );
+	if ($msg =~ /^!FLIP$/ ) {
+		$server->command ( "msg $target ┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻" );
+		return;
+	}
 	$server->command ( "msg $target (╯°□°）╯︵ ┻━┻" );
 }
 
@@ -59,15 +63,6 @@ Irssi::signal_add_last('message public', 'public_hue');
 Irssi::signal_add_last('message own_public', 'own_hue');
 Irssi::signal_add_last('message private', 'private_hue');
 Irssi::signal_add_last('message own_private', 'own_private_hue');
-
-
-
-
-
-
-
-
-
 
 Irssi::command_bind('flip', 'table_flip');
 
