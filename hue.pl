@@ -32,7 +32,7 @@ sub private_hue {
 
 sub hue {
 	my ($server, $msg, $nick, $target) = @_;
-	return if ($msg !~ /^!hue$/i );
+	return if ($msg !~ /^!hue$|^!euh$|^!heu$|^!ehu$|^!ǝnɥ$/i );
 	$hue = substr $msg, 1;
 	$server->command ( "msg $target $hue $hue $hue" );
 }

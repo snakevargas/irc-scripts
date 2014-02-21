@@ -50,12 +50,14 @@ sub private_hue {
 
 sub hue {
 	my ($server, $msg, $nick, $target) = @_;
-	return if ($msg !~ /^!flip$/i );
+	return if ($msg !~ /^!flip$|^!putback$/i );
 	if ($msg =~ /^!FLIP$/ ) {
 		$server->command ( "msg $target ┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻" );
-		return;
+	} elsif ($msg =~ /^!flip$/i) {
+		$server->command ( "msg $target (╯°□°）╯︵ ┻━┻" );
+	} elsif ($msg =~ /^!putback$/i) {
+		$server->command ("msg $target ┬─┬ノ(°_°ノ)");
 	}
-	$server->command ( "msg $target (╯°□°）╯︵ ┻━┻" );
 }
 
 
