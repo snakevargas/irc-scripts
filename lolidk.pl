@@ -32,11 +32,11 @@ sub private_hue {
 
 sub hue {
 	my ($server, $msg, $nick, $target) = @_;
-	return if ($msg !~ /^!lo+lidk$/i );
+	return if ($msg !~ /^!lo*lidk$/i );
 	$hue = "¯\\";
 	$lolLength = length($msg) - length("!lolidk");
-	$hueArms = "_";
-	for(my $i = 0; $i < $lolLength; $i++) {
+	$hueArms = "";
+	for(my $i = 0; $i <= $lolLength; $i++) {
 		$hueArms .= "_";
 	}
 	$hue .= $hueArms;
