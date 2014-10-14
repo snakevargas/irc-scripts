@@ -55,6 +55,8 @@ sub hue {
 		$server->command ( "msg $target ┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻" );
 	} elsif ($msg =~ /^!flip$/i) {
 		$server->command ( "msg $target (╯°□°）╯︵ ┻━┻" );
+	} elsif ($msg =~ /^!PUTBACK$/) {
+		$server->command ("msg $target ┬─┬ノ(°_°)ㄟ┬─┬");
 	} elsif ($msg =~ /^!putback$/i) {
 		$server->command ("msg $target ┬─┬ノ(°_°ノ)");
 	}
